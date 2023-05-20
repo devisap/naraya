@@ -12,8 +12,44 @@ use Illuminate\Support\Facades\Validator;
 
 class SalaryApi extends Controller
 {
-    public function index(){
-        
+    public function index(Request $req){
+        try {
+            if(!$req->date){
+                return response([
+                    'status_code' => 400,
+                    'status_message' => 'Parameter date required'
+                ], 200);
+            }
+
+            $salary = Salary::where('s_u_id', $req->uId);
+            if($req->date == 'all'){
+                $res = $salary->orderBy('s_date', 'desc')
+                    ->get();
+            }else{
+                $date = explode('-', $req->date);
+                $res = $salary->whereYear('s_date', $date[0])
+                    ->whereMonth('s_date', $date[1])
+                    ->first();
+            }
+
+            if(!$res){
+                return response([
+                    'status_code'    => 200,
+                    'status_message' => 'Data not found'
+                ], 200);
+            }else{
+                return response([
+                    'status_code'    => 200,
+                    'status_message' => 'Data found',
+                    'data'           => $res
+                ], 200);
+            }
+        } catch (Exception $err) {
+            return response([
+                'status_code' => 500,
+                'status_message' => $err->getMessage()
+            ], 200);
+        }
     }
     public function store(Request $req){
         try {
