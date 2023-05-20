@@ -68,7 +68,7 @@
                                             <tr class="text-dark fw-bolder">
                                                 <th>No.</th>
                                                 <th>Name</th>
-                                                <th>Date</th>
+                                                <th>Payroll Date </th>
                                                 <th>Amount Salary</th>
                                             </tr>
                                         </thead>

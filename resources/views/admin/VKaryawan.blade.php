@@ -38,9 +38,9 @@
                                                 <th>Name</th>
                                                 <th>Country</th>
                                                 <th>No. Passport</th>
-                                                <th>Expired Passport</th>
-                                                <th>Permit Date</th>
-                                                <th>Expired Permit</th>
+                                                <th>Expired Passport Date</th>
+                                                <th>Date of Issue Permit</th>
+                                                <th>Expired Permit Date</th>
                                                 <th>Payment Date</th>
 												<th>Status Passport</th>
 												<th>Status Permit</th>
@@ -139,7 +139,7 @@
 							</div>
 							<div class="col">
 								<div class="form-group">
-									<h6>Expired Passport</h6>
+									<h6>Expired Passport Date</h6>
 									<p>30 Maret 2033</p>
 								</div>
 							</div>
@@ -147,13 +147,13 @@
                         <div class="row">
 							<div class="col">
 								<div class="form-group">
-									<h6>Permit Date</h6>
+									<h6>Date of Issue Permit</h6>
 									<p>12 Mei 2023</p>
 								</div>
 							</div>
 							<div class="col">
 								<div class="form-group">
-									<h6>Expired Permit</h6>
+									<h6>Expired Permit Date</h6>
 									<p>12 Mei 2024</p>
 								</div>
 							</div>
