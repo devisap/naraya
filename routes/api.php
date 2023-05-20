@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\api\v1\AuthApi;
 use App\Http\Controllers\api\v1\master\UserApi;
+use App\Http\Controllers\api\v1\transaction\SalaryApi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,13 @@ Route::prefix('v1')->group(function(){
         Route::prefix('user')
             ->controller(UserApi::class)->group(function(){
                 Route::get('/', 'index');
+            });
+
+        // salary
+        Route::prefix('salary')
+            ->controller(SalaryApi::class)->group(function(){
+                Route::get('/', 'index');
+                Route::post('/', 'store');
             });
 
     });

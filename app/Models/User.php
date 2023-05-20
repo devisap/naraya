@@ -34,7 +34,9 @@ class User extends Model
     ];
 
     protected $hidden = [
-        'u_password'
+        'u_password',
+        'created_at',
+        'updated_at'
     ];
 
     protected $casts = [
