@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin/VLogin');
 });
+
+Route::get('karyawan', [WelcomeController::class, 'VKaryawan']);
+Route::get('gaji', [WelcomeController::class, 'VGaji']);
+Route::get('login', [WelcomeController::class, 'VLogin']);
