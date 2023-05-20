@@ -34,7 +34,7 @@ class AuthApi extends Controller
                 ['u_email', '=', $req->email],
                 ['u_password', '=', hash('sha256', md5($req->password))]
             ])
-            ->select('u_id', 'u_email', 'u_name')
+            ->select('u_id', 'u_email', 'u_name', 'u_c_id')
             ->first();
     
             if($user == null){

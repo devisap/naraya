@@ -33,6 +33,10 @@ class User extends Model
         "created_at"
     ];
 
+    protected $hidden = [
+        'u_password'
+    ];
+
     protected $casts = [
         'updated_at' => 'datetime'
     ];

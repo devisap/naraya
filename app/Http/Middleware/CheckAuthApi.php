@@ -31,6 +31,12 @@ class CheckAuthApi
                 ], 200);
             }
 
+            $request->merge([
+                'uId'       => $jwt->u_id,
+                'uName'     => $jwt->u_name,
+                'uEmail'    => $jwt->u_email,
+                'uCId'      => $jwt->u_c_id
+            ]);
             return $next($request);
         } catch (Exception $err) {
             return response([
@@ -38,6 +44,5 @@ class CheckAuthApi
                 'status_message' => "Authentication failed"
             ], 200);
         }
-        return $next($request);
     }
 }
